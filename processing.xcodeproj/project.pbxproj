@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8977F42E24BB2B9E00A6F4E5 /* p5.js in Resources */ = {isa = PBXBuildFile; fileRef = 8977F42D24BB2B9E00A6F4E5 /* p5.js */; };
+		897FE7F52566A58700E551C6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897FE7F42566A58700E551C6 /* WebKit.framework */; };
 		89E59496249D531F002B2300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E59495249D531F002B2300 /* AppDelegate.swift */; };
-		89E59498249D531F002B2300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E59497249D531F002B2300 /* SceneDelegate.swift */; };
 		89E5949A249D531F002B2300 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E59499249D531F002B2300 /* ViewController.swift */; };
 		89E5949D249D531F002B2300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E5949B249D531F002B2300 /* Main.storyboard */; };
 		89E5949F249D5321002B2300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E5949E249D5321002B2300 /* Assets.xcassets */; };
 		89E594A2249D5321002B2300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E594A0249D5321002B2300 /* LaunchScreen.storyboard */; };
+		89E594AB249D5BC1002B2300 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 89E594A9249D57B2002B2300 /* demo.html */; };
+		89E594AE249D5D35002B2300 /* processing.js in Resources */ = {isa = PBXBuildFile; fileRef = 89E594AD249D5D35002B2300 /* processing.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8977F42D24BB2B9E00A6F4E5 /* p5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = p5.js; sourceTree = "<group>"; };
+		897FE7F42566A58700E551C6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		89E59492249D531F002B2300 /* processing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = processing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E59495249D531F002B2300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89E59497249D531F002B2300 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		89E59499249D531F002B2300 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		89E5949C249D531F002B2300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89E5949E249D5321002B2300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89E594A1249D5321002B2300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89E594A3249D5321002B2300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E594A9249D57B2002B2300 /* demo.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
+		89E594AD249D5D35002B2300 /* processing.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = processing.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				897FE7F52566A58700E551C6 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		897FE7F32566A58600E551C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				897FE7F42566A58700E551C6 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89E59489249D531F002B2300 = {
 			isa = PBXGroup;
 			children = (
 				89E59494249D531F002B2300 /* processing */,
 				89E59493249D531F002B2300 /* Products */,
+				897FE7F32566A58600E551C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +73,24 @@
 			isa = PBXGroup;
 			children = (
 				89E59495249D531F002B2300 /* AppDelegate.swift */,
-				89E59497249D531F002B2300 /* SceneDelegate.swift */,
 				89E59499249D531F002B2300 /* ViewController.swift */,
+				89E594B0249D6A9E002B2300 /* Processing */,
 				89E5949B249D531F002B2300 /* Main.storyboard */,
 				89E5949E249D5321002B2300 /* Assets.xcassets */,
 				89E594A0249D5321002B2300 /* LaunchScreen.storyboard */,
 				89E594A3249D5321002B2300 /* Info.plist */,
 			);
 			path = processing;
+			sourceTree = "<group>";
+		};
+		89E594B0249D6A9E002B2300 /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				89E594A9249D57B2002B2300 /* demo.html */,
+				8977F42D24BB2B9E00A6F4E5 /* p5.js */,
+				89E594AD249D5D35002B2300 /* processing.js */,
+			);
+			path = Processing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E594A2249D5321002B2300 /* LaunchScreen.storyboard in Resources */,
+				89E594AE249D5D35002B2300 /* processing.js in Resources */,
+				89E594AB249D5BC1002B2300 /* demo.html in Resources */,
+				8977F42E24BB2B9E00A6F4E5 /* p5.js in Resources */,
 				89E5949F249D5321002B2300 /* Assets.xcassets in Resources */,
 				89E5949D249D531F002B2300 /* Main.storyboard in Resources */,
 			);
@@ -140,7 +169,6 @@
 			files = (
 				89E5949A249D531F002B2300 /* ViewController.swift in Sources */,
 				89E59496249D531F002B2300 /* AppDelegate.swift in Sources */,
-				89E59498249D531F002B2300 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DC55LFB88;
 				INFOPLIST_FILE = processing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DC55LFB88;
 				INFOPLIST_FILE = processing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,144 @@
+<!--p5.j-->
+<script src="p5.js"></script>
+<style type="text/css">
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Disable selection/copy in WKWebView */
+}
+</style>
+
+<script>
+    //#TODO: Write your processing code here. For example...
+    
+    const CYCLE = 100;
+    const COL = createCols("https://coolors.co/app/ffaf87-ef798a-63474d-a6a2a2-1c5875");
+    let bg;
+
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+        noStroke();
+        bg = createGraphics(width, height);
+      bg.noStroke();
+      for (let i = 0; i < 300000; i++) {
+        let x = random(width);
+        let y = random(height);
+        let s = noise(x*0.01, y*0.01)*2;
+        bg.fill(240, 20);
+        bg.rect(x, y, s, s);
+      }
+    }
+
+    function draw() {
+        randomSeed(0);
+        countRad = frameCount/CYCLE*TAU;
+        let yi = 0;
+        for(y = height; y >= 0; y -= 100){
+            fill(COL[yi % COL.length]);
+            rect(0,0,width,y);
+            let span;
+            for(x = 0; x < width; x += span)
+            {
+                span = int(random(30,150));
+                const nv = noise(x+cos(countRad)*0.15,y+sin(countRad)*0.15);
+                drop(x,y,span,30+200*nv);
+            }
+            yi++;
+        }
+        image(bg,0,0);
+    }
+
+
+    function drop(x,y,w,h)
+    {
+        let r = h >w? w/4 : h/4 ;
+        beginShape();
+        vertex(x,y);
+        bezierVertex(x+r,y,x+r,y+r,x+r,y+r);
+        bezierVertex(x+r,y+h/2,x,y+h,x+w/2, y+h);
+        vertex(x+w/2,y);
+        endShape(CLOSE);
+        beginShape();
+        vertex(x+w,y);
+        bezierVertex(x+w-r,y,x+w-r,y+r,x+w-r,y+r);
+        bezierVertex(x+w-r,y+h/2,x+w,y+h,x+w/2, y+h);
+        vertex(x+w/2,y);
+        endShape(CLOSE);
+    }
+
+    function createCols(_url)
+    {
+      let slash_index = _url.lastIndexOf('/');
+      let pallate_str = _url.slice(slash_index + 1);
+      let arr = pallate_str.split('-');
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = '#' + arr[i];
+      }
+      return arr;
+    }
+
+</script>
+
+
+<!--processing.js-->
+<!--
+<script src="processing.js"></script>
+
+<style type="text/css">
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Disable selection/copy in WKWebView */
+}
+</style>
+
+<script type="application/processing" data-processing-target="pjs">
+    
+    //#TODO: Write your processing code here. For example...
+    //http://www.dainf.ct.utfpr.edu.br/~merkle/processing/learning/examples/distance1d.html
+    
+    float xpos1;
+    float xpos2;
+    float xpos3;
+    float xpos4;
+    int thin = 8;
+    int thick = 36;
+    
+    void setup()
+    {
+        size(window.innerWidth, window.innerHeight);
+        noStroke();
+        xpos1 = width/2;
+        xpos2 = width/2;
+        xpos3 = width/2;
+        xpos4 = width/2;
+    }
+
+    void draw()
+    {
+        background(0);
+        float mx = mouseX * 0.4 - width/5.0;
+        fill(102);
+        rect(xpos2, 0, thick, height/2);
+        fill(204);
+        rect(xpos1, 0, thin, height/2);
+        fill(102);
+        rect(xpos4, height/2, thick, height/2);
+        fill(204);
+        rect(xpos3, height/2, thin, height/2);
+        xpos1 += mx/16;
+        xpos2 += mx/64;
+        xpos3 -= mx/16;
+        xpos4 -= mx/64;
+        if(xpos1 < -thin)  { xpos1 =  width; }
+        if(xpos1 >  width) { xpos1 = -thin; }
+        if(xpos2 < -thick) { xpos2 =  width; }
+        if(xpos2 >  width) { xpos2 = -thick; }
+        if(xpos3 < -thin)  { xpos3 =  width; }
+        if(xpos3 >  width) { xpos3 = -thin; }
+        if(xpos4 < -thick) { xpos4 =  width; }
+        if(xpos4 >  width) { xpos4 = -thick; }
+    }
+</script>
+
+<canvas id="pjs"> </canvas>
+-->
+
